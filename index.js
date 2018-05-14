@@ -76,8 +76,7 @@ $('document').ready(function() {
       .style("position", "absolute")
       .style("z-index", "10")
       .style("visibility", "hidden")
-      .style("background", "yellow")
-      .text("a simple tooltip");
+      .attr("class", "tooltip");
         
     //set individual bars for data pts
     chart.selectAll(".bar")
@@ -89,9 +88,18 @@ $('document').ready(function() {
       .attr("height", function(d) { return height - y(d[1]);})
       .attr("width", barWidth)
       //code to make visible the tooltip
-      .on("mouseover", function(d) {tooltip.text(d[1]); return tooltip.style("visibility", "visible"); })
+      .on("mouseover", function(d) {
+        d3.select(this).attr("class", "mouseover");
+        var dollars = d3.format("$,.2f")(d[1]);
+        var currentDateTime = new Date(d[0]);
+        var year = currentDateTime.getFullYear();
+        var month = currentDateTime.getMonth();
+        tooltip.html("<span class='amount'>" + dollars + 
+                     "&nbsp;Billion</span><br><span class='year'>" + year + ' - ' + months[month] + "</span>"); 
+        return tooltip.style("visibility", "visible"); })
       .on("mousemove", function() {return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left",(d3.event.pageX + 10)+ "px");})
-      .on("mouseout", function() {return tooltip.style("visibility", "hidden");});
-
+      .on("mouseout", function() {
+        d3.select(this).attr("class", "mouseoff");
+        return tooltip.style("visibility", "hidden");});
   });
 });
