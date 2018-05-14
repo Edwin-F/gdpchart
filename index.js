@@ -69,6 +69,15 @@ $('document').ready(function() {
       .attr("dy", "0.8em")
       .style("text-anchor", "end")
       .text("Gross Domestic Product, USA");
+
+    //define tooltip properties
+    var tooltip =  d3.select(".card")
+      .append("div")
+      .style("position", "absolute")
+      .style("z-index", "10")
+      .style("visibility", "hidden")
+      .style("background", "yellow")
+      .text("a simple tooltip");
         
     //set individual bars for data pts
     chart.selectAll(".bar")
@@ -78,7 +87,11 @@ $('document').ready(function() {
       .attr("x", function(d) { return x(new Date(d[0]));})
       .attr("y", function(d) { return y(d[1]);})
       .attr("height", function(d) { return height - y(d[1]);})
-      .attr("width", barWidth);
+      .attr("width", barWidth)
+      //code to make visible the tooltip
+      .on("mouseover", function(d) {tooltip.text(d[1]); return tooltip.style("visibility", "visible"); })
+      .on("mousemove", function() {return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left",(d3.event.pageX + 10)+ "px");})
+      .on("mouseout", function() {return tooltip.style("visibility", "hidden");});
 
   });
 });
