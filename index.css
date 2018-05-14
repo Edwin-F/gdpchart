@@ -1,0 +1,23 @@
+body {
+  background-color: #ddd;
+  background-repeat: repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACgCAMAAACsXRuGAAAADFBMVEWIiIjd3d3y8vLm5uZzdc63AAAAbklEQVR42u3ZIQ4AIAwDwI39/8/wAlTFxFUgm5ALmFZV51Iv52Vyx/7CzhdONr3/ylCgQIECBQoUKFCgQIECBQoUKFCgQIECBcrmccGe4qX4vqBAgQIFChQoUKBAgQIFChQoUKBAgQIFij3lX3gBXBBzc8FaGvIAAAAASUVORK5CYII=)
+}
+/**/
+.title {
+  font-size: 2.5em;
+  font-family: sans-serif;
+  color: steelblue;
+  text-align: center;
+  padding: 15px 0px 5px 0px;
+}
+/**/
+.card {
+  background-color: white;
+  margin: 40px auto;
+  padding: 0px;
+  width: 1050px;
+  height: 640px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.32), 0 3px 12px 0 rgba(0, 0, 0, 0.24);
+}
+/**/
