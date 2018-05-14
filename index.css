@@ -4,6 +4,14 @@ body {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACgCAMAAACsXRuGAAAADFBMVEWIiIjd3d3y8vLm5uZzdc63AAAAbklEQVR42u3ZIQ4AIAwDwI39/8/wAlTFxFUgm5ALmFZV51Iv52Vyx/7CzhdONr3/ylCgQIECBQoUKFCgQIECBQoUKFCgQIECBcrmccGe4qX4vqBAgQIFChQoUKBAgQIFChQoUKBAgQIFij3lX3gBXBBzc8FaGvIAAAAASUVORK5CYII=)
 }
 /**/
+.notes {
+  font-size: 12px;
+  font-family: sans-serif;
+  color: steelblue;
+  padding: 20px;
+  text-align: center;
+}
+
 .title {
   font-size: 2.5em;
   font-family: sans-serif;

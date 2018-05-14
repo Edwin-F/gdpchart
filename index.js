@@ -10,5 +10,9 @@ $('document').ready(function() {
     console.log(data);
     console.log(JSON.stringify(jsonData));
 
+    d3.select(".notes")
+      .append("text")
+      .text(jsonData.description);
+
   });
 });
