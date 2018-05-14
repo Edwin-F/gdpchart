@@ -42,3 +42,7 @@ body {
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+.axis text {
+  font: 15px sans-serif;
+}

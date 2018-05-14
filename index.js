@@ -39,6 +39,12 @@ $('document').ready(function() {
       .scale(x)
       .orient("bottom")
       .ticks(d3.time.years, 5);
+
+    //define yAxis properties
+    var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(10, "");
     
     //set chart area size
     var chart = d3.select(".chart")
@@ -52,7 +58,18 @@ $('document').ready(function() {
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
-    
+
+    //add y-axis
+    chart.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.8em")
+      .style("text-anchor", "end")
+      .text("Gross Domestic Product, USA");
+        
     //set individual bars for data pts
     chart.selectAll(".bar")
       .data(data)
