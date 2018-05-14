@@ -33,6 +33,12 @@ $('document').ready(function() {
     var y = d3.scale.linear()
       .range([height, 0])
       .domain([0, d3.max(data, function(d) { return d[1];})]);
+
+    //define xAxis properties
+    var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom")
+      .ticks(d3.time.years, 5);
     
     //set chart area size
     var chart = d3.select(".chart")
@@ -40,6 +46,12 @@ $('document').ready(function() {
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    //add x-axis
+    chart.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
     
     //set individual bars for data pts
     chart.selectAll(".bar")

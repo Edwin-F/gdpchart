@@ -1,9 +1,10 @@
+/*gives background a graphing paper layout*/
 body {
   background-color: #ddd;
   background-repeat: repeat;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAACgCAMAAACsXRuGAAAADFBMVEWIiIjd3d3y8vLm5uZzdc63AAAAbklEQVR42u3ZIQ4AIAwDwI39/8/wAlTFxFUgm5ALmFZV51Iv52Vyx/7CzhdONr3/ylCgQIECBQoUKFCgQIECBQoUKFCgQIECBcrmccGe4qX4vqBAgQIFChQoUKBAgQIFChQoUKBAgQIFij3lX3gBXBBzc8FaGvIAAAAASUVORK5CYII=)
 }
-/**/
+
 .notes {
   font-size: 12px;
   font-family: sans-serif;
@@ -19,7 +20,8 @@ body {
   text-align: center;
   padding: 15px 0px 5px 0px;
 }
-/**/
+
+/*defines chart area*/
 .card {
   background-color: white;
   margin: 40px auto;
@@ -32,4 +34,11 @@ body {
 .chart rect {
   fill: steelblue;
 }
-/**/
+
+/*gives axes tick marks look*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
