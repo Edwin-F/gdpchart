@@ -73,9 +73,7 @@ $('document').ready(function() {
     //define tooltip properties
     var tooltip =  d3.select(".card")
       .append("div")
-      .style("position", "absolute")
-      .style("z-index", "10")
-      .style("visibility", "hidden")
+      .style("opacity", 0)
       .attr("class", "tooltip");
         
     //set individual bars for data pts
@@ -94,12 +92,15 @@ $('document').ready(function() {
         var currentDateTime = new Date(d[0]);
         var year = currentDateTime.getFullYear();
         var month = currentDateTime.getMonth();
+        tooltip.transition().duration(200).style("opacity", 0.9);
         tooltip.html("<span class='amount'>" + dollars + 
-                     "&nbsp;Billion</span><br><span class='year'>" + year + ' - ' + months[month] + "</span>"); 
-        return tooltip.style("visibility", "visible"); })
+                     "&nbsp;Billion</span><br><span class='year'>" + 
+                     year + ' - ' + months[month] + "</span>"); 
+      })
       .on("mousemove", function() {return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left",(d3.event.pageX + 10)+ "px");})
       .on("mouseout", function() {
         d3.select(this).attr("class", "mouseoff");
-        return tooltip.style("visibility", "hidden");});
+        tooltip.transition().duration(300).style("opacity", 0);
+      });
   });
 });
