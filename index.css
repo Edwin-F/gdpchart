@@ -8,7 +8,7 @@ body {
 .notes {
   font-size: 12px;
   font-family: sans-serif;
-  color: steelblue;
+  color: #ff3333;
   padding: 20px;
   text-align: center;
 }
@@ -16,7 +16,7 @@ body {
 .title {
   font-size: 2.5em;
   font-family: sans-serif;
-  color: steelblue;
+  color:  #ff3333;
   text-align: center;
   padding: 15px 0px 5px 0px;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .chart rect {
-  fill: steelblue;
+  fill: #ff3333;
 }
 
 /*gives axes tick marks look*/
@@ -48,7 +48,7 @@ body {
 }
 
 .chart .mouseover {
-  fill: lightsteelblue;
+  fill: #ffcccc;
 }
 
 .amount {
@@ -72,5 +72,5 @@ body {
   border-radius: 5px;
   pointer-events: none;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-  background-color: lightsteelblue;
+  background-color: #ffcccc;
 }
